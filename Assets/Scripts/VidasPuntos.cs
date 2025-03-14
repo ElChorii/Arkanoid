@@ -12,6 +12,8 @@ public class VidasPuntos : MonoBehaviour
     [SerializeField] private TextMeshProUGUI vidasTexto;
     [SerializeField] private TextMeshProUGUI puntosTexto;
 
+    [SerializeField] private TextMeshProUGUI puntosTextoCanvaHasGanado;
+
     [SerializeField] private GameObject perdisteCanvas;
     [SerializeField] private GameObject ganasteCanvas;
 
@@ -34,7 +36,7 @@ public class VidasPuntos : MonoBehaviour
 
     private void Start()
     {
-        vidasTexto.text = vidasActuales.ToString();
+        vidasTexto.text = vidasActuales.ToString() + "/3 <3";
         perdisteCanvas.SetActive(false);
         ganasteCanvas.SetActive(false);
     }
@@ -46,6 +48,8 @@ public class VidasPuntos : MonoBehaviour
 
         if (bloquesParent.transform.childCount <= 1)
         {
+            puntosTexto.text = puntosActuales.ToString();
+            puntosTextoCanvaHasGanado.text = puntosActuales.ToString() + " Pts";
             ganasteCanvas.SetActive(true);
         }
     }
