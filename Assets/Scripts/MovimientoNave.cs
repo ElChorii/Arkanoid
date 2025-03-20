@@ -58,6 +58,10 @@ public class PaddleMovement : MonoBehaviour
             Destroy(collision.gameObject);
             StartCoroutine(InvertirControles());
         }
+        else if (collision.gameObject.CompareTag("InvertidoPowerUp"))
+        {
+            return;
+        }
     }
 
     IEnumerator InvertirControles()

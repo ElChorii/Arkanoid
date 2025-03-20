@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2982084846011735937}
   - component: {fileID: 1677630142030750490}
   - component: {fileID: 8219391260037848025}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Powerup
   m_TagString: InvertidoPowerUp
   m_Icon: {fileID: 0}
