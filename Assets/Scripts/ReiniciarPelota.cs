@@ -14,4 +14,9 @@ public class ReiniciarPelota : MonoBehaviour
         collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         VidasPuntos.instance.CambiarVidas(-1);
     }
+    private void OnTriggerEnter(Collider trigerrition)
+    {
+        Destroy(trigerrition.gameObject);
+    }
+
 }

@@ -12,6 +12,9 @@ public class PaddleMovement : MonoBehaviour
 
     private float invertidoDuracion = 10f;
 
+    // Valor 0 = Límite izquierda / Valor 1 = Límite derecha
+    [SerializeField] private float[] limits;
+
     [SerializeField] private GameObject invertirPowerUp;
 
     //public float bounds = 9f;
@@ -19,7 +22,7 @@ public class PaddleMovement : MonoBehaviour
     private float inputX; // Entrada horizontal
 
     private void Awake()
-    {
+    {        
         if (instance == null)
         {
             instance = this;
@@ -30,7 +33,7 @@ public class PaddleMovement : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Movimiento();
     }
@@ -47,11 +50,11 @@ public class PaddleMovement : MonoBehaviour
 
         // Mover la nave en el eje X
         Vector3 playerPosition = transform.position;
-        playerPosition.x = (playerPosition.x + moveInput * moveSpeed * Time.deltaTime);
+        playerPosition.x = Mathf.Clamp(playerPosition.x + moveInput * moveSpeed * Time.deltaTime, limits[0], limits[1]);
         transform.position = playerPosition;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("InvertidoPowerUp"))
         {
@@ -59,6 +62,7 @@ public class PaddleMovement : MonoBehaviour
             StartCoroutine(InvertirControles());
         }
     }
+
 
     IEnumerator InvertirControles()
     {

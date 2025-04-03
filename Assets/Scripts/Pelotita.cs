@@ -10,6 +10,7 @@ public class BallBounce : MonoBehaviour
     public bool isBallMoving;
 
     [SerializeField] private float speed;
+    [SerializeField] private float speedAddition;
 
     private void Awake()
     {
@@ -51,5 +52,11 @@ public class BallBounce : MonoBehaviour
         transform.parent = null;
         ballRb.velocity = new Vector3(Random.Range(-1f, 1f), 1f, 0f);
         isBallMoving = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        speed += speedAddition;
+        PaddleMovement.instance.moveSpeed += speedAddition;
     }
 }

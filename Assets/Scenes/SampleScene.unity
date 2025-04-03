@@ -1394,7 +1394,6 @@ GameObject:
   - component: {fileID: 398696414}
   - component: {fileID: 398696413}
   - component: {fileID: 398696417}
-  - component: {fileID: 398696416}
   m_Layer: 0
   m_Name: Barrita
   m_TagString: Untagged
@@ -1411,7 +1410,7 @@ Transform:
   m_GameObject: {fileID: 398696411}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.0199, y: 1, z: -10.9619}
+  m_LocalPosition: {x: 0, y: 1, z: -10.9619}
   m_LocalScale: {x: 1.2056613, y: 1.511493, z: 0.58410096}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1491,33 +1490,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398696411}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &398696416
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398696411}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 124
-  m_CollisionDetection: 0
 --- !u!114 &398696417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1531,6 +1503,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 14
+  limits:
+  - -9.8
+  - 9
   invertirPowerUp: {fileID: 946509939956469676, guid: 45ce41e158a486447acef8dbe9a3bd11,
     type: 3}
 --- !u!4 &406768064 stripped
@@ -2609,6 +2584,11 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnOffset.z
       value: -11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086110320313888979, guid: b4c8518a6ef90f34180d9902eabe1f08,
+        type: 3}
+      propertyPath: speedAddition
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3026873555894303537, guid: b4c8518a6ef90f34180d9902eabe1f08,
         type: 3}

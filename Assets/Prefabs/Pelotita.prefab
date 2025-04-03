@@ -119,10 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d3d736c46508d4ca1c38029d3972cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 10
-  launchForce: 15
-  spawnOffset: {x: 0, y: 0.5, z: 0}
-  ballPrefab: {fileID: 3026873555894303537}
+  initialVelocity: {x: 0, y: 0, z: 0}
+  isBallMoving: 0
+  speed: 0
+  speedAddition: 0
 --- !u!54 &-6993144214055687626
 Rigidbody:
   m_ObjectHideFlags: 0
